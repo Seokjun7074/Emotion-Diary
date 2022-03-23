@@ -1,6 +1,7 @@
 ## SPA에 대해서 공부해보장
 
-#**03.20**
+# **03.20**
+
 React Router에서는 a태그를 통해 페이지 이동을 하지 않는다.
 만약 a태그를 통해 페이지 이동을 하면 매번 페이지가 새로고침된다.
 
@@ -11,8 +12,9 @@ React Router에서는 a태그를 통해 페이지 이동을 하지 않는다.
 
 #**03.23**
 
-##Query string
-웹페이지에 데이터를 전달하는 가장 간단한 방법
+## Query string
+
+웹페이지에 데이터를 전달하는 가장 간단한 방법  
 /edit?id=10&mode=dark
 
 ```
@@ -22,7 +24,8 @@ const mode = searchParams.get("mode");
 
 ```
 
-##Navigate
+## Navigate
+
 페이지 이동에 사용
 
 ```
