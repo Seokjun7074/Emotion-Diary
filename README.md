@@ -67,3 +67,18 @@ export const DiraryDispatchContext = React.createContext();
 위와 같은 식으로 Provider컴포넌트의 하위 컴포넌트들에 데이터를 공급해준다.
 
 Context를 사용하면 해당 컴포넌트는 재사용하기 어려워 진다는 단점이 있다. 해당 컴포넌트는 Context가 없이 재사용이 어렵기 때문입니다.
+
+---
+
+## 옵션 등으로 배열을 정렬시킬 때
+
+```
+const getProcessedDiaryList = () => {
+    const copyList = JSON.parse(JSON.stringify(diaryList));
+  };
+```
+
+diaryList.sort()를 사용하게되면 원본 배열자체가 정렬되므로 JSON.parse를 사용한다.
+위와 같이 JSON.stringify(diaryList)를 사용하면
+배열인 diaryList를 문자열로 바꾸어 JSON화 시킨다.
+그 다음 JSON.parse를 사용하면 문자열로 변환된 diaryList를 다시 배열로 변환해준다.
