@@ -12,6 +12,7 @@ const Home = () => {
   const [curDate, setCurDate] = useState(new Date());
   const headText = `${curDate.getFullYear()}년 ${curDate.getMonth() + 1}월`;
 
+  console.log(curDate.getMonth());
   useEffect(() => {
     if (diaryList.length >= 1) {
       //해당 월의 첫날~마지막날을 설정해서 해당 월에 작성된 일기 추리기
@@ -35,17 +36,14 @@ const Home = () => {
   }, [diaryList, curDate]);
 
   useEffect(() => {
-    console.log(data);
+    // console.log(data);
   }, [data]);
+
   const increaseMonth = () => {
-    setCurDate(
-      new Date(curDate.getFullYear(), curDate.getMonth() + 1, curDate.getDate())
-    );
+    setCurDate(new Date(curDate.getFullYear(), curDate.getMonth() + 1));
   };
   const decreaseMonth = () => {
-    setCurDate(
-      new Date(curDate.getFullYear(), curDate.getMonth() - 1, curDate.getDate())
-    );
+    setCurDate(new Date(curDate.getFullYear(), curDate.getMonth() - 1));
   };
 
   return (
