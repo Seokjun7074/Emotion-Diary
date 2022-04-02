@@ -1,7 +1,7 @@
 import { useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import EmotionItem from "./EmotionItem";
-import { DiaryDispatchContext } from "../App.js";
+import { DiaryDispatchContext } from "./../App.js";
 
 import MyButton from "./MyButton";
 import MyHeader from "./MyHeader";
@@ -34,9 +34,24 @@ const emotionList = [
   },
 ];
 
-const getString = (date) => {
-  return date.toISOString().slice(0, 10);
-  //ISO형식 문자열 반환 모질라 검색해보자
+export const getString = (date) => {
+  // return date.toISOString().slice(0, 10);
+  // //ISO형식 문자열 반환 모질라 검색해보자
+  let year = date.getFullYear();
+
+  let month = date.getMonth() + 1;
+
+  let day = date.getDate();
+
+  if (month < 10) {
+    month = `0${month}`;
+  }
+
+  if (day < 10) {
+    day = `0${day}`;
+  }
+
+  return `${year}-${month}-${day}`;
 };
 
 const DiaryEditor = () => {
@@ -57,7 +72,7 @@ const DiaryEditor = () => {
       contentRef.current.focus();
       return;
     }
-    console.log(date, content, emotion);
+    // console.log(date, content, emotion);
     onCreate(date, content, emotion);
     navigate("/", { replace: true });
   };
