@@ -1,18 +1,17 @@
 import { useContext, useEffect, useState } from "react";
-import { DiraryStateContext } from "../App";
+import { DiaryStateContext } from "../App";
 
 import MyHeader from "./../components/MyHeader";
 import MyButton from "./../components/MyButton";
 import DiaryList from "../components/DiaryList";
 
 const Home = () => {
-  const diaryList = useContext(DiraryStateContext);
+  const diaryList = useContext(DiaryStateContext);
 
   const [data, setData] = useState([]);
   const [curDate, setCurDate] = useState(new Date());
   const headText = `${curDate.getFullYear()}년 ${curDate.getMonth() + 1}월`;
 
-  console.log(curDate.getMonth());
   useEffect(() => {
     if (diaryList.length >= 1) {
       //해당 월의 첫날~마지막날을 설정해서 해당 월에 작성된 일기 추리기
