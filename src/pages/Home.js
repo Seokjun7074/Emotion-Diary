@@ -23,7 +23,10 @@ const Home = () => {
       const lastDay = new Date(
         curDate.getFullYear(),
         curDate.getMonth() + 1,
-        0 //이번년도 이번달의 마지막일
+        0, //이번년도 이번달의 마지막일
+        23,
+        59,
+        59
       ).getTime();
 
       setData(

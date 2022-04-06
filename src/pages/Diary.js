@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { DiaryStateContext } from "../App";
 
-import { getString } from "../util/date";
 import { emotionList } from "../util/emotion";
 
 import MyHeader from "../components/MyHeader";
