@@ -98,3 +98,13 @@ export const getString = (date) => {
 };
 
 ```
+
+##빌드 명령어
+
+npm run build
+
+빌드 폴더 생성, index.html 파일 압축
+
+serve -s build
+
+로컬에서 배포
